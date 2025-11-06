@@ -1,0 +1,9 @@
+Flask
+Flask-Cors
+Flask-Limiter
+yfinance
+pandas
+finta
+python-dotenv
+requests
+gunicorn

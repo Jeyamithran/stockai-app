@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StockAI Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+  <header>
+    <h1>📈 StockAI Dashboard</h1>
+  </header>
+
+  <form id="stockForm">
+    <input id="symbolInput" placeholder="Enter Stock (e.g. AAPL)" required>
+    <select id="timeframeSelect">
+      <option value="1d">1 Day</option>
+      <option value="1w">1 Week</option>
+      <option value="1mo">1 Month</option>
+    </select>
+    <button type="submit">Analyze</button>
+  </form>
+
+  <div id="stockData" class="card"></div>
+
+  <div class="tabs">
+    <button class="tab-button active" data-type="technical">Technical</button>
+    <button class="tab-button" data-type="fundamental">Fundamental</button>
+    <button class="tab-button" data-type="risk">Risk</button>
+    <button class="tab-button" data-type="news">News</button>
+  </div>
+
+  <div id="aiSignal" class="card"></div>
+  <div id="chart" class="card"></div>
+
+  <div id="news" class="card">
+    <div class="news-header">
+      <h3>🌍 Global Finance News</h3>
+      <button id="refreshNews">🔄 Refresh</button>
+    </div>
+    <div id="newsContent"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
